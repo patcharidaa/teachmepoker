@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pocket Lab — Texas Hold'em Trainer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><h1>♠ Pocket Lab</h1><p>Texas Hold’em practice table</p></div>
+  <div class="top-actions"><button id="newHand">New Hand</button><button id="newGame">New Game</button></div>
+</header>
+<main>
+<section class="table-wrap"><div class="table"><div class="felt">
+  <div class="board"><div id="pot">Pot $0</div><div id="community" class="cards"></div><div id="street"></div></div>
+  <div id="seats"></div>
+</div></div></section>
+<aside class="sidebar">
+<section class="panel">
+<h2>Game setup</h2>
+<label>Players<input id="playerCount" type="number" min="2" max="9" value="6"></label>
+<label>Starting stack<input id="startingStack" type="number" min="100" step="50" value="1000"></label>
+<div class="two">
+<label>Small blind<input id="smallBlind" type="number" min="1" value="10"></label>
+<label>Big blind<input id="bigBlind" type="number" min="2" value="20"></label>
+</div>
+<label>Mode<select id="mode">
+<option value="learning">Learning</option><option value="casual">Casual</option>
+<option value="standard" selected>Standard</option><option value="tough">Tough</option><option value="expert">Expert</option>
+</select></label>
+<div id="modeDescription" class="description"></div>
+<label class="toggle"><input id="personalityEnabled" type="checkbox" checked> Use randomized personalities</label>
+<label class="toggle"><input id="showPersonalities" type="checkbox" checked> Show personalities</label>
+</section>
+<section class="panel">
+<div id="status" class="status">Starting…</div>
+<div id="decisionInfo" class="decision-info"></div>
+<div class="actions"><button id="fold" class="danger">Fold</button><button id="checkCall">Check</button><button id="raise" class="primary">Bet</button></div>
+<div class="bet-row"><input id="betAmount" type="number" min="1" value="40"><button id="allIn">All-in</button></div>
+<div id="learningBox" class="learning"></div>
+</section>
+<section class="panel"><h2>Hand history</h2><div id="history" class="history"></div></section>
+</aside>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
